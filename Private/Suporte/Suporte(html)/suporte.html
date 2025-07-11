@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suporte</title>
+    <link rel="stylesheet" href="../Suporte(css)/suporte.css" />
+    <link rel="shortcut icon" href="../../1-ebf92cfd.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  </head>
+
+  <body>
+    <!-- Imagem de fundo -->
+
+    <img
+      class="suporte-img"
+      src="../Suporte(IMG)/Suporte-fundo.jpg"
+      alt="img"
+    />
+    <div
+      id="particles-js"
+      style="
+        position: absolute;
+        width: 100%;
+        height: 85%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+      "
+    ></div>
+    <!-- loading -->
+
+    <div class="loading-container" id="loading-container">
+      <div class="box-loading" id="box-loading"></div>
+    </div>
+    <!-- Menu de navegação -->
+
+    <nav class="menu-lateral">
+      <div class="btn-expandir">
+        <i class="fa-solid fa-bars" id="btn-expan"></i>
+      </div>
+
+      <ul>
+        <li class="item-menu">
+          <a href="../index/slc.html">
+            <span class="icon tor"><i class="fa-solid fa-chess-rook"></i></span>
+            <span class="txt-link TORRE">HOME</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a href="http://localhost:82/PJ-Beiron/Private/Login/index/Login.html">
+            <span class="icon"><i class="fa-solid fa-dungeon"></i></span>
+            <span class="txt-link TORRE">LOGIN</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a href="http://localhost:82/PJ-Beiron/Private/Suporte/Suporte(html)/suporte.html">
+            <span class="icon"><i class="fa-solid fa-dragon"></i></span>
+            <span class="txt-link">SUPORTE</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- tela de suporte -->
+
+    <section class="container-principal">
+      <div class="Container-texto">
+        <h1><b>S U P O R T E</b></h1>
+      </div>
+
+      <div class="Text-sup">
+        <h3>
+          <strong>
+            Este é o seu canal direto com a nossa equipe.<br />
+            Se preferir, você também pode entrar em contato pelo e-mail: <br />
+            📧
+            <a href="https://mail.google.com/mail/?view=cm&to=exemplo@email.com"
+              >suporte@b7web.com.br</a
+            >
+            <br />
+            Estamos à disposição para ajudar no que for preciso!</strong
+          >
+        </h3>
+      </div>
+    </section>
+
+    <section class="container-principal">
+      <div class="Suporte-conteiner">
+        <form action="">
+          <div class="Assunto-opcao">
+            <label for="">Assunto:</label> <br />
+            <select id="opcao" name="opcao" class="Input-envios" required>
+              <option class="option" value="" disabled selected>
+                Selecione
+              </option>
+              <option class="option" value="1">Dúvida</option>
+              <option class="option" value="2">Reclamação</option>
+              <option class="option" value="3">Sugestão</option>
+              <option class="option" value="4">Pedido</option>
+            </select>
+          </div>
+          <div class="Assunto-opcao">
+            <label for="">E-mail:</label><br />
+            <input
+              class="Input-envios"
+              type="email"
+              id="email"
+              required
+              placeholder="Insira um E-mail"
+            />
+          </div>
+          <div>
+            <label for="">Mensagem:</label> <br />
+            <textarea
+              class="Input-envios"
+              name=""
+              id="Mensagem"
+              placeholder="Digite sua mensagem..."
+              maxlength="1000"
+              minlength="100"
+              required
+            ></textarea>
+          </div>
+          <button class="botao-envio" type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="dragon-animacao">
+      <div class="Text-dragon">
+        <h1>B E I R O N</h1>
+      </div>
+    </section>
+
+    <div class="Mescara-site"></div>
+
+    <script src="../Suporte(js)/suporte.js"></script>
+    <script src="../Suporte(js)/loading.js"></script>
+    <script src="../Suporte(js)/particles.js"></script>
+  </body>
+</html>

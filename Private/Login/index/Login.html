@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../../1-ebf92cfd.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
+      integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link rel="stylesheet" href="../Style/Login.css" />
+
+    <title>Login</title>
+  </head>
+
+  <header>
+    <!--mensagem de erro-->
+
+    <div class="validacao">
+      <p class="errorValidacao" id="mensagemErro">
+        Usuário ou senha incorretos!
+      </p>
+    </div>
+  </header>
+
+  <body>
+    <!-- loading -->
+
+    <div class="loading-container" id="loading-container">
+      <div class="box-loading" id="box-loading"></div>
+    </div>
+
+    <!-- Menu de navegação -->
+
+    <nav class="menu-lateral">
+      <div class="btn-expandir">
+        <i class="fa-solid fa-bars" id="btn-expan"></i>
+      </div>
+
+      <ul>
+        <li class="item-menu">
+          <a href="../index/slc.html">
+            <span class="icon tor"><i class="fa-solid fa-chess-rook"></i></span>
+            <span class="txt-link TORRE">HOME</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a
+            href="http://localhost:82/PJ-Beiron/Private/Cadastre-se/IndexCadastreSe/Cadastre.html"
+          >
+            <span class="icon"><i class="fa-solid fa-scroll"></i></span>
+            <span class="txt-link">CADASTRAR</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a href="http://localhost:82/PJ-Beiron/Private/Suporte/Suporte(html)/suporte.html">
+            <span class="icon"><i class="fa-solid fa-dragon"></i></span>
+            <span class="txt-link">SUPORTE</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="bottom-site"></div>
+
+    <!--Tela de login -->
+
+    <div class="container-principal">
+      <div class="Form-container">
+        <form method="POST" action="../../Model/Login/Login.php">
+          <h1>L O G I N</h1>
+          <div class="Input-container">
+            <input
+              type="text"
+              required
+              maxlength="30"
+              minlength="1"
+              id="usuario"
+              name="usuario"
+            />
+            <label for="">Usuário</label>
+          </div>
+          <div class="Input-container">
+            <input
+              type="password"
+              required
+              id="senha"
+              maxlength="30"
+              minlength="1"
+            />
+            <label for="">Senha</label>
+            <div class="olho">
+              <i
+                class="fa-solid fa-eye"
+                id="olho-aberto"
+                onclick="toggleOlho()"
+              ></i>
+              <i
+                class="fa-solid fa-eye-slash"
+                id="olho-fechado"
+                onclick="toggleOlho()"
+              ></i>
+            </div>
+          </div>
+          <div class="Input-lembreMe">
+            <label for="lembrar"
+              ><input type="checkbox" id="lembrar" /> Lembre-me</label
+            >
+          </div>
+
+          <button class="botao" type="submit" onclick="errorValidation(event)">
+            Entrar
+          </button>
+          <div class="Recuperar-senha">
+            <p>Esqueceu sua senha?<a href=""> Clique aqui!</a></p>
+          </div>
+
+          <div class="redes-sociais">
+            <div class="Redes-icones">
+              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+            </div>
+            <div class="Redes-icones">
+              <a href=""><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            <div class="Redes-icones">
+              <a href=""><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <video class="video-background" autoplay muted loop id="video-background">
+      <source
+        src="../video/a_first_person_view_video_of_someone_walking_near_the_ground_in_the_hall_of_the_starting_frame__when_07c889.mp4"
+        type="video/mp4"
+      />
+    </video>
+    <script src="../Js.js/Login.js" defer></script>
+    <script src="../Js.js/loading.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../StyleCadastreSe/Cadastre.css" />
+    <link rel="shortcut icon" href="../../1-ebf92cfd.ico" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Cadaster-se</title>
+  </head>
+  <body>
+    <!-- loading -->
+
+    <div class="loading-container" id="loading-container">
+      <div class="box-loading" id="box-loading"></div>
+    </div>
+
+    <!-- Menu de navegação -->
+
+    <nav class="menu-lateral">
+      <div class="btn-expandir">
+        <i class="fa-solid fa-bars" id="btn-expan"></i>
+      </div>
+
+      <ul>
+        <li class="item-menu">
+          <a href="../index/slc.html">
+            <span class="icon tor"><i class="fa-solid fa-chess-rook"></i></span>
+            <span class="txt-link TORRE">HOME</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a href="http://localhost:82/PJ-Beiron/Private/Login/index/Login.html">
+            <span class="icon"><i class="fa-solid fa-dungeon"></i></span>
+            <span class="txt-link TORRE">LOGIN</span>
+          </a>
+        </li>
+
+        <li class="item-menu">
+          <a href="http://localhost:82/PJ-Beiron/Private/Suporte/Suporte(html)/suporte.html">
+            <span class="icon"><i class="fa-solid fa-dragon"></i></span>
+            <span class="txt-link">SUPORTE</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Tela de cadastre-se -->
+
+    <div class="Cadastrar-container">
+      <div class="container-principal">
+        <form id="fform" action="">
+          <div class="img-dragon">
+            <img class="dragon" src="../IMG/dragon1.png" alt="" />
+            <h1>C A D A S T R E - S E</h1>
+          </div>
+
+          <div class="input-container">
+            <input type="text" name="" id="usuario" placeholder=" " />
+            <label for="">Usuário</label>
+            <br />
+            <span> O Usuário precisa ter no mínimo 3 caracteres</span>
+          </div>
+
+          <div class="input-container input-email">
+            <input type="email" name="" id="email" placeholder=" " />
+            <label for="">E-mail</label>
+            <br />
+            <span class="">Coloque um e-mail válido</span>
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              name=""
+              id="senha"
+              placeholder=" "
+              minlength="3"
+            />
+            <label for="">Senha</label>
+            <div class="olho">
+              <i
+                class="fa-solid fa-eye"
+                id="olho-aberto"
+                onclick="toggleOlho()"
+              ></i>
+              <i
+                class="fa-solid fa-eye-slash"
+                id="olho-fechado"
+                onclick="toggleOlho()"
+              ></i>
+            </div>
+            <br />
+            <span class="">A senha precisa ter no mínimo 6 caracteres</span>
+          </div>
+          <div class="input-container">
+            <input
+              type="password"
+              name=""
+              id="confirmarSenha"
+              placeholder=" "
+            />
+            <label for="">Confirmar Senha</label>
+            <div class="olho">
+              <i
+                class="fa-solid fa-eye"
+                id="olho-abertoc"
+                onclick="toggleOlhoc()"
+              ></i>
+              <i
+                class="fa-solid fa-eye-slash"
+                id="olho-fechadoc"
+                onclick="toggleOlhoc()"
+              ></i>
+            </div>
+            <br />
+            <span class="">As senhas não coincidem</span>
+          </div>
+          <button class="botao" type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+
+    <video class="video-background" autoplay muted loop id="video-background">
+      <source
+        src="../video/a_first_person_view_video_of_someone_walking_near_the_ground_in_the_hall_of_the_starting_frame__when_07c889.mp4"
+        type="video/mp4"
+      />
+    </video>
+
+    <script src="../JsCadastreSe/Cadastre.js"></script>
+    <script src="../JsCadastreSe/loading.js"></script>
+  </body>
+</html>

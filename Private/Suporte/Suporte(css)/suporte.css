@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+
+  flex-direction: column;
+}
+
+:root {
+  --color-Cinza-carvão: #202020;
+  --color-Branco: white;
+  --color-brown: brown;
+  --color-ciano: #0ef;
+  --color-preto: black;
+  --color-Cinza-escuro: #20202048;
+  --color-vermelho: red;
+  --color-cinza-claro: #ddd;
+}
+
+/*Imagem de fundo*/
+
+.suporte-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -3;
+  transition: opacity 30s ease-in-out;
+}
+
+/* Mascara site*/
+
+.Mescara-site {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.212);
+  z-index: -3;
+  pointer-events: none;
+}
+
+/* Loading animation */
+
+.loading-container {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-Cinza-carvão);
+  z-index: 555;
+}
+
+.loading-container .box-loading {
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  top: 48%;
+  left: 48%;
+  margin: -3.1rem 0 0 -3.1rem;
+  border-top: solid 3px var(--color-ciano);
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+
+.loading-container .box-loading::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top: solid 3px var(--color-vermelho);
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+
+.loading-container .box-loading::after {
+  position: absolute;
+  content: "";
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  border-top: solid 3px var(--color-Branco);
+  border-radius: 50%;
+  animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .loading-container .box-loading {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .loading-container .box-loading::before {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+
+  .loading-container .box-loading::after {
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+  }
+}
+
+/*Menu lateral*/
+
+nav.menu-lateral {
+  width: 80px;
+  height: 100%;
+  background-color: #202020;
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 brown;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+  overflow: hidden;
+  z-index: 15;
+}
+
+nav.menu-lateral.expandir {
+  width: 300px;
+}
+
+nav.menu-lateral.expandir ~ main.Container {
+  margin-left: 300px;
+}
+
+.btn-expandir {
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.tor {
+  padding-left: 3px;
+}
+
+.btn-expandir i {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+ul li.item-menu {
+  transition: 0.2s;
+}
+
+ul li.ativo {
+  background-color: brown;
+}
+
+ul li.item-menu:hover {
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+}
+
+ul li.item-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 33px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 70px;
+  transition: 1s;
+  opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+  margin-left: 40px;
+  opacity: 1;
+}
+
+nav.menu-lateral.expandir ul li.item-menu a .TORRE {
+  margin-left: 47px;
+  opacity: 1;
+}
+
+ul li.item-menu a .icon i {
+  font-size: 30px;
+  transition: 0.2s;
+}
+
+ul li.item-menu a .icon i:hover {
+  transform: translateX(5px) rotate(5deg);
+}
+
+/*Suporte*/
+
+nav.menu-lateral.expandir ~ .container-principal {
+  margin-left: 350px;
+}
+
+.container-principal {
+  margin-left: 125px;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color-Branco);
+  transition: margin-left 1s;
+}
+
+/*Texto*/
+
+.Container-texto {
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.Text-sup {
+  font-size: 20px;
+}
+
+.Text-sup strong {
+  filter: drop-shadow(2px 2px 3px var(--color-Cinza-escuro));
+}
+
+.Text-sup a {
+  text-decoration: none;
+  color: var(--color-vermelho);
+}
+
+.Text-sup a:hover {
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+.Suporte-conteiner {
+}
+
+.Suporte-conteiner .Input-envios {
+  width: 100%;
+  max-width: 500px;
+  resize: none;
+  margin-bottom: 20px;
+  border: 2px solid var(--color-Cinza-carvão);
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: Sup-text 2s ease-in-out 0.8s forwards;
+}
+
+/*Campo Assunto */
+
+.Assunto-opcao .option {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+label {
+  font-size: 20px;
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: Sup-text 2s ease-in-out 0.8s forwards;
+}
+
+.Input-envios {
+  border-radius: 5px;
+}
+
+#opcao {
+  padding: 5px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/*E-mail*/
+
+#email {
+  padding: 5px;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Mensagem*/
+
+#Mensagem {
+  padding: 5px;
+  height: 150px;
+  font-size: 16px;
+  border: 2px solid var(--color-Cinza-carvão);
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: Sup-text 2s ease-in-out 0.8s forwards;
+}
+
+/* Botão de enviar */
+
+.botao-envio {
+  width: 200px;
+  padding: 11px;
+  border-radius: 8px;
+  background: var(--color-Branco);
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+  border: none;
+  transform: translateX(-60px);
+  opacity: 0;
+  animation: Sup-text 2s ease-in-out 0.8s forwards;
+}
+
+.botao-envio:hover {
+  background: var(--color-cinza-claro);
+}
+
+/* Animação escrita*/
+
+@keyframes Sup-text {
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.Container-texto h1,
+.Text-sup h3 {
+  transform: translateY(-60px);
+  opacity: 0;
+  animation: text-bai 2s ease-in-out 0.8s forwards;
+}
+
+.Text-dragon {
+  position: absolute;
+  bottom: 10vh;
+  right: 5vw;
+  font-size: 35pt;
+  color: white;
+  text-shadow: 2px 2px 4px black;
+  display: flex;
+  transform: translateY(60px);
+  opacity: 0;
+  animation: Sup-text 2s ease-in-out 0.8s forwards;
+}
+
+@keyframes bairon {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes text-bai {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

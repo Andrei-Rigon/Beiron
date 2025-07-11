@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Pirata+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pirata One", system-ui;
+  font-weight: 400;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+:root {
+  --color-Cinza-carvão: #202020;
+  --color-Branco: white;
+  --color-brown: brown;
+  --color-ciano: #0ef;
+  --color-preto: black;
+  --color-Cinza-escuro: #20202048;
+  --color-vermelho: red;
+}
+
+/*Vídeo*/
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  object-fit: cover;
+  z-index: -3;
+  transition: opacity 30s ease-in-out;
+}
+video:not(:empty) {
+  opacity: 1;
+}
+
+/* Loading animation */
+
+.loading-container{
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-Cinza-carvão);
+  z-index: 555;
+}
+
+.loading-container .box-loading{
+  position: absolute;
+  width: 7rem;
+  height: 7rem;
+  top: 48%;
+  left: 48%;
+  margin: -3.1rem 0 0 -3.1rem;
+  border-top: solid 3px var(--color-ciano);
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+
+.loading-container .box-loading::before{
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-top: solid 3px var(--color-vermelho);
+  border-radius: 50%;
+  animation: rotate 2s infinite linear;
+}
+
+.loading-container .box-loading::after{
+position: absolute;
+content: "";
+top: 12px;
+left: 12px;
+right: 12px;
+bottom: 12px;
+border-top: solid 3px var(--color-Branco);
+border-radius: 50%;
+animation: rotate 1s infinite linear;
+}
+
+@keyframes rotate{
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+  pointer-events: none;
+}
+
+@media (max-width: 600px) {
+  .loading-container .box-loading {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .loading-container .box-loading::before {
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+  }
+
+  .loading-container .box-loading::after {
+    top: 9px;
+    left: 9px;
+    right: 9px;
+    bottom: 9px;
+  }
+}
+
+/*Menu lateral*/
+
+nav.menu-lateral {
+  width: 80px;
+  height: 100%;
+  background-color: #202020;
+  padding: 40px 0 40px 1%;
+  box-shadow: 3px 0 0 brown;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.7s;
+  overflow: hidden;
+  z-index: 15;
+}
+
+nav.menu-lateral.expandir {
+  width: 300px;
+}
+
+nav.menu-lateral.expandir ~ main.Container {
+  margin-left: 300px;
+}
+.btn-expandir {
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+
+.tor {
+  padding-left: 3px;
+}
+
+.btn-expandir i {
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+ul {
+  height: 100%;
+  list-style-type: none;
+}
+
+ul li.item-menu {
+  transition: 0.2s;
+}
+
+ul li.ativo {
+  background-color: brown;
+}
+
+ul li.item-menu:hover {
+  background-color: brown;
+  border-radius: 10px 0 0 10px;
+}
+
+ul li.item-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 20px 4%;
+  display: flex;
+  margin-bottom: 20px;
+  line-height: 33px;
+}
+
+ul li.item-menu a .txt-link {
+  margin-left: 70px;
+  transition: 1s;
+  opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link {
+  margin-left: 40px;
+  opacity: 1;
+}
+
+nav.menu-lateral.expandir ul li.item-menu a .TORRE {
+  margin-left: 47px;
+  opacity: 1;
+}
+
+ul li.item-menu a .icon i {
+  font-size: 30px;
+  transition: 0.2s;
+}
+
+ul li.item-menu a .icon i:hover {
+  transform: translateX(5px) rotate(5deg);
+}
+
+/* tela de cadastre-se*/
+
+nav.menu-lateral.expandir ~ .Cadastrar-container {
+  margin-left: 350px;
+}
+
+.Cadastrar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  box-shadow: 0 0 10px var(--color-Branco);
+  backdrop-filter: blur(5px);
+  height: 650px;
+  width: 450px;
+  padding: 20px;
+  margin-left: 100px;
+  transition: margin-left 1s;
+  margin-right: 30px;
+  border-radius: 10px;
+}
+
+.Cadastrar-container .container-principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.dragon {
+  width: 200px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.img-dragon {
+  display: flex;
+  justify-content: center;
+}
+
+/*Titulo*/
+
+.container-principal h1 {
+  position: absolute;
+  font-size: 40px;
+  color: var(--color-Branco);
+  text-align: center;
+  margin-top: 60px;
+  filter: drop-shadow(10px 10px 10px var(--color-brown));
+}
+
+
+
+/*Inputs*/
+
+.container-principal .input-container {
+  position: relative;
+  margin: 35px 0;
+  border-bottom: 2px solid var(--color-Branco);
+}
+
+.container-principal .input-container label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: var(--color-Branco);
+  pointer-events: none;
+  transition: 0.7s;
+}
+
+.input-container input {
+  width: 400px;
+  height: 40px;
+  font-size: 16px;
+  padding: 0 5;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-Branco);
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+  top: -5px;
+}
+
+.input-container input:focus ~ label,
+.input-email input:not(:placeholder-shown) ~ label {
+  top: -5px;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset;
+  -webkit-text-fill-color: white;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+/*Olho-senha*/
+
+.input-container .olho {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--color-Branco);
+  z-index: 10;
+}
+
+#olho-fechado {
+  display: none;
+}
+
+#olho-fechadoc {
+  display: none;
+}
+
+/*Botão*/
+
+.botao {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  box-shadow: 0 0 10px var(--color-Branco);
+  font-size: 20px;
+  color: var(--color-Branco);
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  transition: 0.2s;
+}
+
+/*Mensagem de erro*/
+
+.input-container span {
+  visibility: hidden;
+  position: absolute;
+  margin-top: 5px;
+}
+
+.botao:hover {
+  background-color: var(--color-Cinza-escuro);
+}
+
+.input-container.error-input {
+  border-bottom: 2px solid red;
+  color: red;
+}
+
+.input-container.error-input span {
+  visibility: visible;
+}
+
+.input-container.error-input label {
+  color: red;
+}
